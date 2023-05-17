@@ -1,6 +1,7 @@
 import { Avatar } from "./Avatar";
+import { Button } from "./Button";
 import { CardContainer } from "./CardContainer";
-import { Line } from "./Line";
+import { Description } from "./Description";
 import { Logo } from "./Logo";
 import { Picture } from "./Picture";
 
@@ -9,9 +10,9 @@ export const Card = () => {
     <CardContainer>
       <Logo />
       <Picture />
-      <Line />
       <Avatar />
-      <h1 className="text-3xl font-bold underline ">Hello world!</h1>
+      <Description />
+      <Button />
     </CardContainer>
   );
 };
