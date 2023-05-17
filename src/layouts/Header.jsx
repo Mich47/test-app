@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../assets/test.svg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const navigation = [
   { name: "Home", link: "/" },
@@ -19,8 +19,8 @@ export default function Header() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="-m-1.5 p-1.5 flex justify-center items-center gap-2"
           >
             <span className="sr-only">Test App</span>
@@ -28,7 +28,7 @@ export default function Header() {
             <span className="text-lg font-medium leading-6 text-gray-900">
               Test App
             </span>
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -62,10 +62,14 @@ export default function Header() {
         <div className="fixed inset-0 z-50" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link
+              to="/"
+              className="-m-1.5 p-1.5"
+              onClick={() => setMobileMenuOpen(false)}
+            >
               <span className="sr-only">Test App</span>
               <img className="h-8 w-auto" src={logo} alt="" />
-            </a>
+            </Link>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
