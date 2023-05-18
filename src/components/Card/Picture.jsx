@@ -1,4 +1,4 @@
-import image from "../assets/picture.svg";
+import image from "../../assets/picture.svg";
 
 export const Picture = () => {
   return (
