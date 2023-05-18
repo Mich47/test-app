@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Card } from "../../components/Card";
-import { getUsers } from "../../services/users.service";
-import { Button } from "../../components/Button";
+import { Card } from "../components/Card";
+import { getUsers } from "../services/users.service";
+import { Button } from "../components/Button";
 
 export default function Tweets() {
   const [page, setPage] = useState(1);
