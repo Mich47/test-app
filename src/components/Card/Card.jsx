@@ -6,13 +6,17 @@ import { Logo } from "./Logo";
 import { Picture } from "./Picture";
 import { useState } from "react";
 
-export const Card = ({ user }) => {
+export const Card = ({ user, isLoading }) => {
   const { avatar, tweets, user: name } = user;
 
   const [followers, setFollowers] = useState(parseInt(user.followers));
   const [isFollow, setIsFollow] = useState(false);
 
-  return (
+  return isLoading ? (
+    <div class="animate-pulse flex space-x-4">
+      <div class="rounded-[20px] bg-indigo-300 w-[380px] h-[460px]"></div>
+    </div>
+  ) : (
     <CardContainer>
       <Logo />
       <Picture />
