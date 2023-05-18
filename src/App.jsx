@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="tweets" element={<Tweets />} />
+          <Route path="/tweets" element={<Tweets />} />
           <Route path="*" element={<Home />} />
         </Route>
       </Routes>
