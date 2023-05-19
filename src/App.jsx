@@ -1,8 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-// import Home from "./pages/Home";
-// import Tweets from "./pages/Tweets";
 import { Suspense, lazy } from "react";
 import MainLayout from "./layouts/MainLayout";
+import { PageLoader } from "./components/Loader";
 const Home = lazy(() => import("./pages/Home"));
 const Tweets = lazy(() => import("./pages/Tweets"));
 
@@ -14,8 +13,7 @@ function App() {
           <Route
             index
             element={
-              // <Suspense fallback={<Loader />}>
-              <Suspense fallback="">
+              <Suspense fallback={<PageLoader />}>
                 <Home />
               </Suspense>
             }
@@ -23,7 +21,7 @@ function App() {
           <Route
             path="tweets"
             element={
-              <Suspense fallback="">
+              <Suspense fallback={<PageLoader />}>
                 <Tweets />
               </Suspense>
             }
