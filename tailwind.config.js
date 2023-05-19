@@ -13,6 +13,7 @@ export default {
         white: "#EBD8FF",
         black: "#373737",
         green: "#5CD3A8",
+        blue: "#471CA9",
       },
       backgroundImage: {
         "blue-gradient":
