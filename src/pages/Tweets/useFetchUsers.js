@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getUsers } from "../../services/users.service";
 import { STATUS } from "../../constants/status.constants";
+import { autoScrollBottom } from "../../utils/autoScrollBottom";
 
 export const useFetchUsers = () => {
   const [page, setPage] = useState(1);
@@ -35,6 +36,8 @@ export const useFetchUsers = () => {
       setUsers((prev) => [...prev, ...data]);
 
       setStatus(STATUS.success);
+
+      autoScrollBottom();
     } catch (error) {
       console.log("error ", error);
       setStatus(STATUS.error);
