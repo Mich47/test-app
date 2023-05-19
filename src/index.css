@@ -12,3 +12,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#nav a.active,
+#sidebar a.active {
+  color: theme("textColor.blue");
+}
