@@ -6,17 +6,13 @@ import { Logo } from "./Logo";
 import { Picture } from "./Picture";
 import { useState } from "react";
 
-export const Card = ({ user, isLoading }) => {
+export const Card = ({ user }) => {
   const { avatar, tweets, user: name } = user;
 
   const [followers, setFollowers] = useState(parseInt(user.followers));
   const [isFollow, setIsFollow] = useState(false);
 
-  return isLoading ? (
-    <div class="animate-pulse flex space-x-4">
-      <div class="rounded-[20px] bg-indigo-300 w-[380px] h-[460px]"></div>
-    </div>
-  ) : (
+  return (
     <CardContainer>
       <Logo />
       <Picture />
@@ -26,7 +22,7 @@ export const Card = ({ user, isLoading }) => {
         <Button
           isFollow={isFollow}
           text={isFollow ? "Following" : "Follow"}
-          handleClick={() => {
+          onClickFn={() => {
             setFollowers(isFollow ? followers - 1 : followers + 1);
             setIsFollow(!isFollow);
           }}
