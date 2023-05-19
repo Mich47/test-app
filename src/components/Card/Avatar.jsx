@@ -1,4 +1,4 @@
-import avatarDefault from "../../assets/avatar.svg";
+import avatarDefault from "../../assets/images/avatar.png";
 import { Line } from "./Line";
 
 export const Avatar = ({ avatar, name }) => {
@@ -8,8 +8,8 @@ export const Avatar = ({ avatar, name }) => {
         <div className="w-20 h-20 rounded-full shadow-userShadow ml-[-8px] mt-[-8px] p-2">
           <img
             className="w-full h-full rounded-full"
-            src={avatar ?? avatarDefault}
-            alt={name ?? "avatar"}
+            src={avatar ? avatar : avatarDefault}
+            alt={name ? name : "avatar"}
           />
         </div>
       </div>
