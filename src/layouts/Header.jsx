@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import logo from "../assets/test.svg";
+import logo from "../assets/images/test.svg";
 import { Link, NavLink } from "react-router-dom";
 
 const navigation = [
@@ -40,17 +40,17 @@ export default function Header() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <nav id="nav" className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
             <NavLink
               to={item.link}
               key={item.name}
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className="text-lg font-semibold leading-6 text-gray-900 hover:text-indigo-600 transition-colors"
             >
               {item.name}
             </NavLink>
           ))}
-        </div>
+        </nav>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end"></div>
       </nav>
       <Dialog
@@ -81,18 +81,18 @@ export default function Header() {
           </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
+              <nav id="sidebar" className="space-y-2 py-6">
                 {navigation.map((item) => (
                   <NavLink
                     to={item.link}
                     key={item.name}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </NavLink>
                 ))}
-              </div>
+              </nav>
             </div>
           </div>
         </Dialog.Panel>
