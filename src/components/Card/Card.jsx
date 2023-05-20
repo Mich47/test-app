@@ -6,11 +6,10 @@ import { Logo } from "./Logo";
 import { Picture } from "./Picture";
 import { useState } from "react";
 
-export const Card = ({ user }) => {
-  const { avatar, tweets, user: name } = user;
+export const Card = ({ user, toggleUserIsFollowing }) => {
+  const { id, isFollowing, avatar, tweets, user: name } = user;
 
   const [followers, setFollowers] = useState(parseInt(user.followers));
-  const [isFollow, setIsFollow] = useState(false);
 
   return (
     <CardContainer>
@@ -20,11 +19,11 @@ export const Card = ({ user }) => {
       <Description followers={followers} tweets={tweets} />
       <div className="py-4 text-center">
         <Button
-          isFollow={isFollow}
-          text={isFollow ? "Following" : "Follow"}
+          isFollowing={isFollowing}
+          text={isFollowing ? "Following" : "Follow"}
           onClickFn={() => {
-            setFollowers(isFollow ? followers - 1 : followers + 1);
-            setIsFollow(!isFollow);
+            setFollowers(isFollowing ? followers - 1 : followers + 1);
+            toggleUserIsFollowing(id);
           }}
         />
       </div>
