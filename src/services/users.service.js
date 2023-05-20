@@ -9,6 +9,5 @@ export const getUsers = async (params = {}) => {
     params: { ...params },
   });
 
-  console.log("data ", data);
   return data;
 };
