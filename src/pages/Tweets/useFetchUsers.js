@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getUsers } from "../../services/users.service";
 import { STATUS } from "../../constants/status.constants";
-import { autoScrollBottom } from "../../utils/autoScrollBottom";
+// import { autoScrollBottom } from "../../utils/autoScrollBottom";
 
 export const useFetchUsers = () => {
   const [page, setPage] = useState(1);
@@ -13,7 +13,7 @@ export const useFetchUsers = () => {
     fetchData(page);
   }, [page]);
 
-  const fetchData = async (page) => {
+  const fetchData = async (page = 1) => {
     const params = {
       page,
       limit: 3,
@@ -37,12 +37,12 @@ export const useFetchUsers = () => {
 
       setStatus(STATUS.success);
 
-      autoScrollBottom();
+      // autoScrollBottom();
     } catch (error) {
       console.log("error ", error);
       setStatus(STATUS.error);
     }
   };
 
-  return { users, isMoreUsers, status, page, setPage };
+  return { users, setUsers, isMoreUsers, status, page, setPage };
 };
