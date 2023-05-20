@@ -5,7 +5,7 @@ export const Description = ({ followers, tweets }) => {
         {tweets} tweets
       </h3>
       <h3 className="font-medium uppercase text-white text-xl">
-        {followers} followers
+        {followers.toLocaleString("en-US")} followers
       </h3>
     </div>
   );
