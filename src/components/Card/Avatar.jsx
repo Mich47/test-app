@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import avatarDefault from "../../assets/images/avatar.png";
 import { Line } from "./Line";
 
@@ -15,4 +16,9 @@ export const Avatar = ({ avatar, name }) => {
       </div>
     </Line>
   );
+};
+
+Avatar.propTypes = {
+  avatar: PropTypes.string,
+  name: PropTypes.string,
 };

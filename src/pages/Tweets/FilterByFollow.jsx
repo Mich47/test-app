@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { FILTER } from "../../constants/filter.constants";
 
 export const FilterByFollow = ({ setSelectedSortOption }) => {
@@ -20,4 +21,8 @@ export const FilterByFollow = ({ setSelectedSortOption }) => {
       </select>
     </div>
   );
+};
+
+FilterByFollow.propTypes = {
+  setSelectedSortOption: PropTypes.func.isRequired,
 };

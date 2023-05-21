@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { STATUS } from "../../constants/status.constants";
 
 export const Button = ({ status, text, onClickFn }) => {
@@ -11,4 +12,10 @@ export const Button = ({ status, text, onClickFn }) => {
       {text}
     </button>
   );
+};
+
+Button.propTypes = {
+  status: PropTypes.string,
+  text: PropTypes.string.isRequired,
+  onClickFn: PropTypes.func,
 };
