@@ -10,7 +10,9 @@ import PropTypes from "prop-types";
 export const Card = ({ user, toggleUserIsFollowing }) => {
   const { id, isFollowing, avatar, tweets, user: name } = user;
 
-  const [followers, setFollowers] = useState(parseInt(user.followers));
+  const [followers, setFollowers] = useState(
+    isFollowing ? parseInt(user.followers) + 1 : parseInt(user.followers)
+  );
 
   return (
     <CardContainer>
