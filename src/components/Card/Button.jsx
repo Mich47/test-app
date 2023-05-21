@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export const Button = ({ text = "Follow", onClickFn, isFollowing }) => {
   return (
     <button
@@ -10,4 +12,10 @@ export const Button = ({ text = "Follow", onClickFn, isFollowing }) => {
       {text}
     </button>
   );
+};
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  isFollowing: PropTypes.bool,
+  onClickFn: PropTypes.func,
 };
