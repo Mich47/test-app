@@ -1,11 +1,12 @@
 import { Card } from "../../components/Card";
 import { useFetchUsers } from "./useFetchUsers";
 import { STATUS } from "../../constants/status.constants";
-import { ButtonLoadMore } from "./ButtonLoadMore";
+import { Button } from "./Button";
 import { Loader } from "../../components/Loader";
 import { useEffect, useState } from "react";
 import { FilterByFollow } from "./FilterByFollow";
 import { FILTER } from "../../constants/filter.constants";
+import { ButtonBack } from "./ButtonBack";
 
 export default function Tweets() {
   const { users, setUsers, status, isMoreUsers, page, setPage } =
@@ -41,7 +42,10 @@ export default function Tweets() {
 
   return (
     <>
-      <FilterByFollow setSelectedSortOption={setSelectedSortOption} />
+      <div className="flex justify-between items-center gap-4">
+        <ButtonBack />
+        <FilterByFollow setSelectedSortOption={setSelectedSortOption} />
+      </div>
 
       <div className="py-5">
         <ul className="flex flex-wrap gap-6">
@@ -62,18 +66,19 @@ export default function Tweets() {
             })
           )}
         </ul>
-        <div className="py-4 text-center">
+        <div className="py-8 text-center">
           {isLoading ? (
             <Loader />
+          ) : isMoreUsers ? (
+            <Button
+              status={status}
+              text={"Load more..."}
+              onClickFn={() => {
+                setPage(page + 1);
+              }}
+            />
           ) : (
-            isMoreUsers && (
-              <ButtonLoadMore
-                status={status}
-                onClickFn={() => {
-                  setPage(page + 1);
-                }}
-              />
-            )
+            <Button text={"No more cards to load"} />
           )}
         </div>
       </div>
