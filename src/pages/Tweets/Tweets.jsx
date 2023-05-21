@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { FilterByFollow } from "./FilterByFollow";
 import { FILTER } from "../../constants/filter.constants";
 import { ButtonBack } from "./ButtonBack";
+import { writeUsersToLS } from "../../utils/writeUserstoLS";
 
 export default function Tweets() {
   const { users, setUsers, status, isMoreUsers, page, setPage } =
@@ -36,6 +37,8 @@ export default function Tweets() {
       }
       return user;
     });
+
+    writeUsersToLS(updatedUsers);
 
     setUsers(updatedUsers);
   };
