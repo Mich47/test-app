@@ -8,11 +8,11 @@ Simple application to work with a user's cards. You can follow and unfollow card
 
 ### Home Page
 
-![App Screenshot](https://i.ibb.co/Gk7Pss6/testApp.jpg)
+![App Screenshot](https://i.ibb.co/16M1MQm/testApp.jpg)
 
 ### Tweets Page
 
-![App Screenshot](https://i.ibb.co/PhLypnY/testApp1.jpg)
+![App Screenshot](https://i.ibb.co/5hsn50B/testApp1.jpg)
 
 <br>
 
