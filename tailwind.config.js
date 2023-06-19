@@ -21,6 +21,13 @@ export default {
         "blue-gradient":
           "linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%)",
         "arrow-down": "url('./assets/images/arrow-down.svg')",
+        picture: "url('./assets/images/picture.webp')",
+      },
+      backgroundPosition: {
+        "top-2": "center top 0.5rem",
+      },
+      backgroundSize: {
+        custom: "308px, 168px",
       },
       boxShadow: {
         lineShadow:

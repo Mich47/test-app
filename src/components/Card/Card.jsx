@@ -2,8 +2,6 @@ import { Avatar } from "./Avatar";
 import { Button } from "./Button";
 import { CardContainer } from "./CardContainer";
 import { Description } from "./Description";
-import { Logo } from "./Logo";
-import { Picture } from "./Picture";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
@@ -16,11 +14,9 @@ export const Card = ({ user, toggleUserIsFollowing }) => {
 
   return (
     <CardContainer>
-      <Logo />
-      <Picture />
       <Avatar avatar={avatar} name={name} />
       <Description followers={followers} tweets={tweets} />
-      <div className="py-4 text-center">
+      <div className="mx-auto">
         <Button
           isFollowing={isFollowing}
           text={isFollowing ? "Following" : "Follow"}
