@@ -11,8 +11,10 @@ export default {
       },
       colors: {
         white: "#EBD8FF",
+        whiteHover: "#d3c2e5",
         black: "#373737",
         green: "#5CD3A8",
+        greenHover: "#8ce0c2",
         blue: "#471CA9",
       },
       backgroundImage: {
